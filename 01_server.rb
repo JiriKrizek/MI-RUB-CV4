@@ -7,11 +7,15 @@ class MyServer < GServer
   end
 
   def serve(io)
-    #io.puts(Time.now.to_s)
-    File.open("c:/DebugTraceAP.log", "r") do |f|
-      while (line = f.gets)
-        io.puts "#{line}"
+    begin
+      File.open("c:/DebugTraceAP.log", "r") do |f|
+        #log.seek(10, IO::SEEK_END)
+        while (line = f.gets)
+          io.puts "#{line}"
+        end
       end
+    rescue Exception=>e
+      return e.to_s
     end
   end
 end
