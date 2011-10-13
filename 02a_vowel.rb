@@ -16,7 +16,7 @@ class VowelFinder
   private
 
   def is_vowel(s)
-    return s =~ /[aeiou]/ 
+    s =~ /[aeiou]/
   end
 
 end
