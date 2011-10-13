@@ -18,7 +18,6 @@ class VowelFinder
   def is_vowel(s)
     s =~ /[aeiou]/
   end
-
 end
 
 vf = VowelFinder.new("the quick brown fox jumped")
